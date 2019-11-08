@@ -20,7 +20,7 @@ export default function Contact() {
   }
 
   const handleAttachment = (e) => {
-    setState({ ...state, "attach": e.target.files[0] })
+    setState({ ...state, [e.target.name]: e.target.files[0] })
   }
 
   const handleSubmit = (e) => {
@@ -64,9 +64,15 @@ export default function Contact() {
         </p>
         <p>
           <label>
-            File:
+            File1:
             <br />
-            <input type="file" onChange={handleAttachment} />
+            <input type="file" name="file1" onChange={handleAttachment} />
+          </label>
+        </p><p>
+          <label>
+            File2:
+            <br />
+            <input type="file" name="file2" onChange={handleAttachment} />
           </label>
         </p>
         <p>
